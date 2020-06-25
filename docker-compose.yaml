@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: postgres
+    env_file:
+      - .env
+    image: postgres:10
+    volumes:
+      - postgres-depo:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  server:
+    container_name: server
+    build:
+      context: server
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+    environment:
+      PORT: 8888
+    ports:
+      - 8888:8888
+    volumes:
+      - ./server:/server
+    restart: unless-stopped
+
+volumes:
+  postgres-depo:
+    name: postgres-depo
