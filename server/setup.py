@@ -15,7 +15,7 @@ setup(
     ],
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=[
-        'aiohttp==3.6.2',
+        'aiohttp==3.7.4',
         'aiohttp_cors==0.7.0',
         'aiopg==1.0.0',
         'alembic==1.4.2',
