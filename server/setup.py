@@ -21,6 +21,6 @@ setup(
         'alembic==1.4.2',
         'peewee==3.13.1',
         'peewee-async==0.7.0',
-        'pydantic==1.5.1'
+        'pydantic==1.6.2'
     ]
 )
